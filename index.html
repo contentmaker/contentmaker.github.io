@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Content Maker Studio</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="files/nuclearAttack.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+	</script>
+	<script src="http://vk.com/js/api/openapi.js?147" type="text/javascript">
+	</script>
+	
+	<style>
+	body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+	body, html {
+	   background-color: #e31e24;
+	   height: 100%;
+	   color: #fff;
+	   line-height: 1.8;
+	}
+
+	.fixed-video {
+	   top: 0;
+	   position: fixed;
+	   min-width: 100%;
+	   min-height: 100%;
+	   z-index: 0;
+	}
+
+	.visible {
+	 visibility: visible;
+	 opacity: 1;
+	 transition: opacity 2s linear;
+	}
+
+	.hidden {
+	 visibility: hidden;
+	 opacity: 0;
+	 transition: visibility 0s 2s, opacity 2s linear;
+	}
+
+	.w3-wide {letter-spacing: 10px;}
+	.w3-hover-opacity {cursor: pointer;}
+
+	#logo {
+	
+	  /* height: 128px; */
+	}
+
+	.red-letter {
+	   transform: translate(0, -10px);
+	   float: left;
+	   width: 40px;
+	   height: auto;
+	}
+
+	.contacts p {
+	   margin-top: 0;
+	   margin-bottom: 0;
+	}
+
+	#overlay {
+	   top: 0;
+	   position: fixed; /* Sit on top of the page content */
+	   width: 100%; /* Full width (cover the whole page) */
+	   height: 100%; /* Full height (cover the whole page) */
+	   z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
+	   display: none;
+	   -webkit-transition: opacity 3s; 
+	   -moz-transition: opacity 3s; 
+	   transition: opacity 3s; 
+	}
+
+	
+	</style>
+</head>
+<body onload="loadPortfolio();">
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter46232829 = new Ya.Metrika({
+						id:46232829,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true
+					});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/46232829" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+	<div class="pompous" id="overlay">
+		<div class="w3-center pompous-label">
+			ВСЕ МОЖЕМ!
+		</div>
+		<div class="animationStripes"></div>
+	</div><!-- Navbar (sit on top) -->
+	
+	<div class="w3-top" style="z-index: 20;">
+		<div class="w3-bar" id="myNavbar">
+			<a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction();" title="Открыть меню"><i class="fa fa-bars"></i></a> <a class="w3-bar-item w3-button" href="#home">Content Maker Studio</a> <a class="w3-bar-item w3-button w3-hide-small" href="#portfolio"><i class="fa fa-th"></i> Портфолио</a> <a class="w3-bar-item w3-button w3-hide-small" href="javascript:void(0);" id="wecan"><i class="fa fa-user"></i> Мы можем</a> <a class="w3-bar-item w3-button w3-hide-small" href="#about"><i class="fa fa-user"></i> О компании</a> <a class="w3-bar-item w3-button w3-hide-small" href="https://docs.google.com/forms/d/e/1FAIpQLSeLL5Yk288g2knlLGrNBqlZPoiaGwwZrLQ4uZowpFCNuchHJw/viewform" target="_blank"><i class="fa fa-envelope"></i> Написать ТЗ</a> <a class="w3-bar-item w3-button w3-hide-small w3-right w3-tooltip" href="skype:live:580128108703736?chat"><i class="fa fa-skype"></i> <span class="w3-text">Content Maker Studio</span></a> <a class="w3-bar-item w3-button w3-hide-small w3-right w3-tooltip" href="mailto:contentmakerstudios@gmail.com" target="_blank"><i class="fa fa-envelope"></i> <span class="w3-text">contentmakerstudios@gmail.com</span></a> <a class="w3-bar-item w3-button w3-hide-small w3-right w3-tooltip" href="https://telegram.me/contentmakerstudio" target="_blank"><i class="fa fa-telegram"></i> <span class="w3-text">@contentmakerstudio</span></a> <a class="w3-bar-item w3-button w3-hide-small w3-right w3-tooltip" href="https://vk.com/content_maker_studio" target="_blank"><i class="fa fa-vk"></i> <span class="w3-text">vk.com/content_maker_studio</span></a> <!-- <a class="w3-bar-item w3-button w3-hide-small w3-right w3-tooltip" href="#" target="_blank"><i class="fa fa-money"></i> --> <!-- <span class="w3-text">Z371188648798, R100138587362</span></a> --> <!-- <a class="w3-bar-item w3-button w3-hide-small w3-right w3-tooltip" href="https://money.yandex.ru/to/410014185355091" target="_blank"><i class="fa fa-rub"></i> --> <!-- <span class="w3-text">Яндекс: 410014185355091</span></a> -->
+		</div><!-- Navbar on small screens -->
+		<div class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium" id="navDemo">
+			<a class="w3-bar-item w3-button" href="#portfolio"><i class="fa fa-th" onclick="toggleFunction()"></i> Портфолио</a> <a class="w3-bar-item w3-button" href="javascript:void(0);" id="wecan"><i class="fa fa-user"></i> Мы можем</a> <a class="w3-bar-item w3-button" href="#about"><i class="fa fa-user" onclick="toggleFunction()"></i> О компании</a> <a class="w3-bar-item w3-button" href="https://docs.google.com/forms/d/e/1FAIpQLSeLL5Yk288g2knlLGrNBqlZPoiaGwwZrLQ4uZowpFCNuchHJw/viewform" onclick="toggleFunction()" target="_blank"><i class="fa fa-envelope"></i> Написать ТЗ</a>
+		</div>
+	</div><!-- First Parallax Image with Logo Text -->
+	<div class="w3-display-container" id="home" style="height: 100%; width: 100%;">
+	
+		<video autoplay="autoplay" class="fixed-video w3-opacity-min w3-grayscale-min" id="video1" loop="loop" preload="auto"><source src="files/StockMarket_1.mp4"></video>
+		<div class="w3-display-container w3-display-middle"style="height: 350px; width: 100%;">
+		<div class="w3-display-topmiddle" >
+				
+				<img src="files/Logo_3.png"  style="margin-bottom: 10px;"  width="300" height="auto" alt="ЛОГОТИП">
+				</div>
+				<div class="w3-display-bottommiddle" >
+			<!--<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity" style="white-space:nowrap;">Content Maker Studio</span>-->
+		</div>
+		
+	</div>
+	</div><!-- Container (About Section) -->
+	<div id="about" style="background-color: #fff; width: 100%; position: relative; color: #000; z-index: 10;">
+		<div class="w3-content w3-padding-64">
+			<div class="w3-row-padding">
+				<div class="w3-col s6 m8">
+					<p><img class="red-letter" src="files/red-letter.svg">удний день на планете Нибиру. Бюрократ-рептилоид скучает в секретном шестом ведомстве, редактируя план стратегической колонизации Земли. Рутинная работа для тамошних обитателей, как могли бы Вы подумать, но если бы кто знал, чем обернется обыкновенная межпланетная интервенция в этот раз. И вот, план утвержден высшим Руководством, а бюрократ принимает агентские полномочия и отправляется на Землю с разведывательной миссией.</p>
+					<p>Десантировавшись возле супермаркета Ашан, Рептилоид неторопливо прогуливается окрестностями, изучает обстановку. Гравитация нормальная, воздух приемлемо загрязнен, земляне приветливые, но вот надо было случиться беседе с местным бродягой-философом! Утомившись после перелета и долгих расспросов, а также изрядно перебрав с хмельным, межгалактический агент отключается. Очнувшись после попойки, Рептилоид обнаружил, что космический корабль исчез, мыслитель беспробудно пьян, а охранник Ашана, как две капли воды похожий на Конора Макгрегора поведал пришельцу о том, что его транспорт угнали неопознанные бездомные.</p>
+					<p>Маленькая неосторожность дала большую течь, и вот все планы рушатся. Но заручившись компанией едва протрезвевшего философа и охранника экс-Макгрегора, Рептилоид решает отправиться со своей проблемой в местную ячейку масонской ложи. Масоны — хоть и давние контрагенты Нибиру, но связь с союзниками давно утеряна, и стало быть помощи при таких обстоятельствах ждать неоткуда. Но вот искусственный интеллект, созданный масонами для того, чтобы заработать все деньги мира на бинарных опционах с удовольствием присоединился к суперкоманде. ИИ поведал новым друзьям страшную правду о том, что рептилоиды — не единственная раса с притязаниями на Землю — конкуренты давно оккупировали планету, а все союзники разбрелись по миру либо ушли в подполье.</p>
+					<p>Ввиду своей немногочисленности и отсутствия командного центра-звездолета, Рептилоид вынужден отложить срочный план захвата и приспосабливаться к новым условиям. Но не владея никакими полезными навыками кроме написания стратегических планов, пришелец открывает студию контентмэйкинга, где по мере трудовых успехов узнает, что подчинять землян можно далеко не только при помощи сверхмощных межгалактический технологий.</p>
+					<p>Начался золотой век веб-контента: статьи о том как "ЛСД изменил умы британских ученых", или о том “Как повлияли бинарные опционы на прогресс в лечении биполярных расстройств" буквально заполонили интернет — вокруг шум — непрерывно и безвозвратно завоевываются сердца и души случайных читателей...и вот уже совсем скоро все Люди будут читать только наши статьи, и уж тогда планета Земля наконец-то вернется в родную гавань!</p>
+					<p>Чем Вы лично можете помочь в борьбе за повсеместную власть Нибиру:</p>
+					<ul class="dots">
+						<li>закажите контент на любую тему</li>
+						<li>после того, как Вам доставят заказ, убедитесь в его боеспособности</li>
+						<li>распространите в местах массового скопления землян (тематические сайты, блоги, социальные сети)</li>
+					</ul>
+					<p>Вместе мы победим!</p>
+				</div>
+				<div class="w3-col s6 m4 w3-center">
+					<div id="vk_groups"></div>
+					<script type="text/javascript">
+					       VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, height: "600"}, 87658348);
+					</script>
+				</div>
+			</div>
+		</div>
+		<div class="w3-row w3-center w3-black w3-padding-16" id="awards">
+		<div class="w3-quarter w3-section">
+			<span class="w3-xlarge" id="value1">0</span><br>
+			Авторов
+		</div>
+		<div class="w3-quarter w3-section">
+			<span class="w3-xlarge" id="value2">0</span><span class="w3-xlarge">+</span><br>
+			Статей написано
+		</div>
+		<div class="w3-quarter w3-section">
+			<span class="w3-xlarge" id="value3">0</span><span class="w3-xlarge">+</span><br>
+			Всего знаков
+		</div>
+		<div class="w3-quarter w3-section">
+			<span class="w3-xlarge" id="value4">0</span><span class="w3-xlarge">+</span><br>
+			Заказчиков
+		</div>
+	</div>
+	</div>
+	
+	<!-- Second Parallax Image with Portfolio Text -->
+	<div class="w3-display-container" style="min-height: 600px">
+		<video autoplay="autoplay" class=" fixed-video w3-opacity-min w3-grayscale-min" id="video2" loop="loop" preload="auto" style="display: none;"><source src="files/StockMarket_2.mp4"></video>
+		<div class="w3-display-middle" style="white-space:nowrap;">
+			<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Портфолио</span>
+		</div>
+	</div><!-- Container (Portfolio Section) -->
+	<div class="w3-content" id="portfolio" style="position: relative;">
+		<div style="height: 50px;"></div>
+		<div id="spoiler" style="background: #fff; color: black;"></div>
+	</div><!-- Footer -->
+	<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off" style="position: relative;">
+		<a class="w3-button w3-light-grey" href="#home"><i class="fa fa-arrow-up w3-margin-right"></i>Наверх</a>
+	</footer>
+	<script>
+function toogle(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+var scrollPos = 0;
+var counted = false;
+
+// Change style of navbar on scroll
+window.onscroll = function() {
+    myFunction()
+};
+
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-opacity" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-opacity w3-white", "");
+    }
+
+    var awards = document.getElementById("awards");
+    var rect = awards.getBoundingClientRect();
+    if (rect.bottom < $(window).height() && !counted) {
+        startCount();
+        counted = true;
+    }
+
+    var el1 = document.getElementById('video1');
+    var el2 = document.getElementById('video2');
+
+    if (document.body.scrollTop < $(window).height()) {
+        if (el1.style.display === 'none')
+            el1.style.display = 'block';
+    } else {
+        el1.style.display = 'none';
+    }
+
+    if (document.body.scrollTop > $(window).height()) {
+        if (el2.style.display === 'none')
+            el2.style.display = 'block';
+    } else {
+        el2.style.display = 'none';
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+var apiKey = "AIzaSyC16dKd6RQRDFJbD2octu8VL9qJhfXJxcE";
+var sheetID = "1VseQ6uxB4S9XKxUq4kfxZDHewdXrsepUN3pxUJS2yHU";
+
+function loadPortfolio() {
+    var url = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetID + "?key=" + apiKey + "&fields=sheets.properties";
+
+    var el = document.getElementById("spoiler");
+    var content = "";
+
+    $.getJSON(url, function(doc) {
+
+        for (var j = 1; j < doc.sheets.length; j++) {
+            var TITLE = doc.sheets[j].properties.title;
+
+            content += "<button onclick=\"loadSpoiler(" +
+                j + ", '" + TITLE + "'); toogle('super-spoiler" + j + "')\" class=\"w3-black w3-button w3-block w3-left-align\">" + TITLE + "<\/button><div id=\"super-spoiler" + j + "\" class=\"w3-hide\"></div>";
+        }
+
+        el.innerHTML = content;
+    });
+}
+
+function loadSpoiler(ind, title) {
+    var url = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetID + "/values/" + title + "?key=" + apiKey + "&majorDimension=ROWS";
+	var content2 = "";
+    $.getJSON(url, function(data) {
+
+        var a = data.values;
+        var endTag = false;
+        if (a) {
+            for (var i = 0; i < a.length; i++) {
+                if (a[i].length == 0) {
+                    continue;
+                } else if (a[i].length > 1) {
+                    content2 += "<li><a target=\"_blank\" href=\"" + a[i][1] + "\">" + a[i][0] + "<\/a><\/li>";
+                } else {
+                    if (endTag) {
+                        content2 += "<\/ul><\/div>";
+                    }
+                    content2 += "<button onclick=\"toogle('spoiler" + i + "')\" class=\"w3-black w3-button w3-block w3-left-align\">" + a[i][0] + "<\/button><div id=\"spoiler" + i + "\" class=\"w3-hide\"><ul class=\"w3-ul\">";
+                    endTag = true;
+                }
+            }
+        }
+        if (endTag)
+            content2 += "<\/div>"
+        document.getElementById("super-spoiler" + ind).innerHTML = content2;
+        console.log("=== " + ind + " ===");
+        console.log(content2);
+    });
+}
+
+function animateValue(id, start, end, duration) {
+    // assumes integer values for start and end
+
+    var obj = document.getElementById(id);
+    var range = end - start;
+    // no timer shorter than 50ms (not really visible any way)
+    var minTimer = 50;
+    // calc step time to show all interediate values
+    var stepTime = Math.abs(Math.floor(duration / range));
+
+    // never go below minTimer
+    stepTime = Math.max(stepTime, minTimer);
+
+    // get current time and calculate desired end time
+    var startTime = new Date().getTime();
+    var endTime = startTime + duration;
+    var timer;
+
+    function run() {
+        var now = new Date().getTime();
+        var remaining = Math.max((endTime - now) / duration, 0);
+        var value = Math.round(end - (remaining * range));
+        obj.innerHTML = value;
+        if (value == end) {
+            clearInterval(timer);
+        }
+    }
+
+    var timer = setInterval(run, stepTime);
+    run();
+}
+
+function startCount() {
+    animateValue("value1", 0, 15, 3000);
+    animateValue("value2", 0, 1470, 3000);
+    animateValue("value3", 0, 7355060, 3000);
+    animateValue("value4", 0, 150, 3000);
+}
+
+$("#wecan").click(function() {
+    $('#overlay').css('display', 'block');
+    $('#overlay').toggleClass('slideDown');
+
+    setTimeout(function() {
+        $('#overlay').toggleClass('slideDown');
+        $('#overlay').toggleClass('slideUp');
+
+        setTimeout(function() {
+            $('#overlay').toggleClass('slideUp');
+            $('#overlay').css('display', 'none');
+        }, 1000);
+    }, 3000);
+});
+	</script>
+</body>
+</html>
