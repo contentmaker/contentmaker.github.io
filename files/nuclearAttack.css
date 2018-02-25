@@ -67,34 +67,33 @@
 
 .pompous-label {
 	-webkit-animation: color-change 1s infinite;
-    -moz-animation: color-change 1s infinite;
-    -o-animation: color-change 1s infinite;
-    -ms-animation: color-change 1s infinite;
-    animation: color-change 1s infinite;
-	
+	-moz-animation: color-change 1s infinite;
+	-o-animation: color-change 1s infinite;
+	-ms-animation: color-change 1s infinite;
+	animation: color-change 1s infinite;
 	font-family: "Calibri", sans-serif;
 	font-size: 500%;
 	font-weight: bold;
 	color: #000;
 	position: absolute;
 	margin: 0;
-	bottom: 0; right: 0;
-
-    top: 50%;
-    left: 0;
-    transform: translate(0,-25%);
+	bottom: 0;
+	right: 0;
+	top: 50%;
+	left: 0;
+	transform: translate(0,-25%);
 }
 
 .animationStripes{
 	width: 100%;
 	height: 100%;
-	
 	clip-path: polygon(0% 0%, 0% 100%, 2.5% 100%, 2.5% 5%, 97.5% 5%, 97.5% 95%, 2.5% 95%, 2.5% 100%, 100% 100%, 100% 0%);
-	-webkit-clip-path: polygon(0% 0%, 0% 100%, 2.5% 100%, 2.5% 5%, 97.5% 5%, 97.5% 95%, 2.5% 95%, 2.5% 100%, 100% 100%, 100% 0%);	
-	
+	-webkit-clip-path: polygon(0% 0%, 0% 100%, 2.5% 100%, 2.5% 5%, 97.5% 5%, 97.5% 95%, 2.5% 95%, 2.5% 100%, 100% 100%, 100% 0%);
 	background-image: repeating-linear-gradient(-45deg, rgb(0, 0, 0), rgb(0, 0, 0) 25px, yellow 25px, yellow 50px);
 	animation: progress 2s linear infinite;
 	background-size: 150% 100%;
+	border-radius: 20px;
+	border: 20px;
 }
 
 @-webkit-keyframes progress{
@@ -195,7 +194,7 @@
 		transform: translateY(0%);
 	}		
 	100% {
-		transform: translateY(-100%);
+		transform: translateY(-200%);
 	}		
 }
 
@@ -204,6 +203,6 @@
 		-webkit-transform: translateY(0%);
 	}
 	100% {
-		-webkit-transform: translateY(-100%);
+		-webkit-transform: translateY(-200%);
 	}	
 }

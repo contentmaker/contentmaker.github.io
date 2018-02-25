@@ -1,0 +1,111 @@
+.w3-bar .community-icon,.w3-bar .chat-icon {
+    padding-bottom: 5px;
+}
+.community-icon i {
+    margin-top: 6px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../files/community-icon.png');
+    background-size: cover;
+}
+.chat-icon i {
+    margin-top: 6px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../files/community-icon.png');
+    background-size: cover;
+
+}
+.community-icon:hover i, .w3-show .community-icon i  {
+    background-image: url('../files/community-reverse-icon.png');
+}
+.chat-icon:hover i, .w3-show .chat-icon i {
+    background-image: url('../files/chat-reverse-icon.png');
+
+}
+#spoiler li {
+    padding-left: 10px;
+    list-style: none;
+    margin-bottom: 3px;
+}
+#spoiler li:before {
+    content: '—  ';
+}
+.defs-only {
+    position: absolute;
+    height: 0; width: 0;
+    overflow: hidden;
+    left: -100%;
+}
+.blue-tint{
+    /* filter: url(#blue-tint) !important; */
+}
+.portfolio-container {
+    min-height: 600px
+}
+#overlay {
+    top: 25%;
+    position: fixed;
+    margin: 0 auto;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+    z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
+    display: none;
+    -webkit-transition: opacity 3s;
+    -moz-transition: opacity 3s;
+    transition: opacity 3s;
+    border-radius: 20px;
+}
+canvas {
+    filter: blur(1px) contrast(1) saturate(0.5) hue-rotate(9deg) brightness(2);
+}
+.logo {
+    width: 300px;
+}
+@media (max-width: 991px) {
+    .portfolio-container {
+        min-height: 400px;
+        max-height: 100vh;
+    }
+    .pompous-label {
+        font-size: 400%;
+    }
+    #vk_groups {
+        margin: 0 auto;
+    }
+    .logo {
+        width: 250px;
+    }
+
+}
+@media (max-width: 767px) {
+    .portfolio-container {
+        min-height: 300px;
+        max-height: 100vh;
+    }
+    .pompous-label {
+        font-size: 350%;
+    }
+    .w3-bar .w3-bar-item {
+        padding: 8px 5px;
+    }
+    .animationStripes {
+        clip-path:  polygon(0% 0%, 0% 100%, 5.5% 100%, 5.5% 5%, 94.5% 5%, 94.5% 95%, 2.5% 95%, 2.5% 100%, 100% 100%, 100% 0%);
+        -webkit-clip-path: polygon(0% 0%, 0% 100%, 5.5% 100%, 5.5% 5%, 94.5% 5%, 94.5% 95%, 2.5% 95%, 2.5% 100%, 100% 100%, 100% 0%);
+    }
+
+}
+@media (max-width: 460px) {
+    .logo {
+        width: 200px;
+    }
+}
+
+
+@media (max-width: 383px) {
+
+    .pompous-label {
+        top: 35%;
+    }
+}
