@@ -150,6 +150,14 @@
 	</div>
 	</div><!-- Container (About Section) -->
 	<div id="about" style="background-color: #fff; width: 100%; position: relative; color: #000; z-index: 10;">
+		<audio id="content-player" src="/files/Content Maker Studio - official theme.mp3" autoplay></audio>
+		<div id="mute" class="player_icon"><img id="img_mute" onclick="playerThemeContent()" width="32" height="32" src="/files/white_mute.png"/></div>
+		<div id="unmute" class="player_icon_hidden"><img id="img_unmute" onclick="playerThemeContent()" width="32" height="32" src="/files/white_unmute.png"/></div>
+		<style>
+			.player_icon { position: fixed; bottom: 20px; right: 20px; display: block; cursor: pointer;}
+			.player_icon_hidden { position: fixed; bottom: 20px; right: 20px; display: none; cursor: pointer;}
+			.img_inverse { filter:invert(100%);}
+		</style>
 		<div class="w3-content w3-padding-64">
 			<div class="w3-row-padding">
 				<div class="w3-col s12 m6 l8">
@@ -236,6 +244,16 @@ window.onscroll = function() {
 
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
+    var img_mute = document.getElementById("img_mute");
+    var img_unmute = document.getElementById("img_unmute");
+
+    if ((document.body.scrollTop > 100 && document.body.scrollTop < 1255) || (document.documentElement.scrollTop > 100 && document.documentElement.scrollTop < 1255)) {
+        img_unmute.className = 'img_inverse';
+        img_mute.className = 'img_inverse';
+    } else {
+        img_unmute.className = '';
+        img_mute.className = '';
+	}
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-opacity" + " w3-white";
     } else {
