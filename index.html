@@ -242,6 +242,24 @@ window.onscroll = function() {
     myFunction()
 };
 
+function playerThemeContent()
+{
+    var icon_mute = document.getElementById("mute");
+    var icon_unmute = document.getElementById("unmute");
+    if(icon_mute.className === 'player_icon')
+	{
+        icon_unmute.className = 'player_icon';
+        icon_mute.className = 'player_icon_hidden';
+        document.getElementById('content-player').pause();
+	}
+    else
+	{
+        icon_unmute.className = 'player_icon_hidden';
+        icon_mute.className = 'player_icon';
+        document.getElementById('content-player').play();
+	}
+}
+
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
     var img_mute = document.getElementById("img_mute");
