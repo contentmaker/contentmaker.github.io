@@ -150,7 +150,7 @@
 	</div>
 	</div><!-- Container (About Section) -->
 	<div id="about" style="background-color: #fff; width: 100%; position: relative; color: #000; z-index: 10;">
-		<audio id="content-player" src="/files/Content Maker Studio - official theme.mp3" autoplay></audio>
+		<audio id="content-player" src="/files/Content Maker Studio - official theme.mp3"></audio>
 		<div id="mute" class="player_icon"><img id="img_mute" onclick="playerThemeContent()" width="32" height="32" src="/files/white_mute.png"/></div>
 		<div id="unmute" class="player_icon_hidden"><img id="img_unmute" onclick="playerThemeContent()" width="32" height="32" src="/files/white_unmute.png"/></div>
 		<style>
@@ -236,6 +236,7 @@ function toogle(id) {
 window.onload = function() {
     var player=document.getElementById("content-player");
     player.volume=0.3;
+    player.play();
 }
 
 var scrollPos = 0;
