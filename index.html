@@ -233,11 +233,12 @@ function toogle(id) {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-window.onload = function() {
+		
+$(document).ready(function(){
     var player=document.getElementById("content-player");
     player.volume=0.3;
     player.play();
-}
+});
 
 var scrollPos = 0;
 var counted = false;
